@@ -4,7 +4,7 @@
 
 ## roi_bbox.ROIBBoxModel Class
 
-``` python
+```python
 detectum = roi_bbox.ROIBBoxModel()
 ```
 
@@ -22,25 +22,25 @@ detectum = roi_bbox.ROIBBoxModel()
 
     This is how you would initialize the Detector so that it uses two cores:
 
-    ``` python
+    ```python
     detectum = roi_bbox.ROIBBoxModel(2)
     ```
 
 2. Using 1 thread
 
-    ``` python
+    ```python
     detectum = roi_bbox.ROIBBoxModel()
     ```
 
     or 
 
-    ``` python
+    ```python
     detectum = roi_bbox.ROIBBoxModel(1)
     ```
 
 3. Using 4 threads
 
-    ``` python
+    ```python
     detectum = roi_bbox.ROIBBoxModel(4)
     ```
 
@@ -68,7 +68,7 @@ You can use options().set_option() method to set the following settings:
 
 1. Set bounding box threshold
 
-    ``` python
+    ```python
     detectum.options().set_option('dnn_threshold', 0.5)
     ```
 
@@ -76,13 +76,13 @@ You can use options().set_option() method to set the following settings:
 
     Enable this to cause the SDK to send every 1000th detection to the cloud where the sampled images can be used for retraining newer and more accurate models.
 
-    ``` python
+    ```python
     detectum.options().set_option('sampling_frequency', 1000)
     ```
 
 ### process_image Method
 
-``` python
+```python
 bboxes = detectum.process_image(numpy.ndarray)
 ```
 
@@ -101,7 +101,7 @@ bboxes = detectum.process_image(numpy.ndarray)
 
 #### Example - Using OpenCV to read image
 
-``` python
+```python
 import os
 from xailient import roi_bbox
 import cv2 as cv
@@ -129,7 +129,7 @@ cv.imwrite('beatles_output.jpg', im)
 
 #### Example -  Using skimage to read image
 
-``` python
+```python
 import os
 from xailient import roi_bbox
 import skimage.io
