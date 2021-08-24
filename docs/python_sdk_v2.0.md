@@ -111,7 +111,7 @@ detectum = roi_bbox.ROIBBoxModel()
 data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
 im = cv.imread(os.path.join(data_dir, 'beatles.jpg'))
 # opencv reads BGR format so we have to convert this to RGB
-im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
+im = cv.cvtColor(im, cv.COLOR_BGR2RGB)
 
 bboxes = detectum.process_image(im)
 
