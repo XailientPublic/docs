@@ -22,10 +22,10 @@ theme:
     palette:
       primary: 'deep purple'
       accent: 'deep purple'
-    logo: 'img/Xailient_X.png'
-    favicon: 'img/favicon.png'
+    logo: '/img/Xailient_X.png'
+    favicon: '/img/favicon.png'
 extra_css:
-- 'stylesheets/extra.css'
+- '/stylesheets/extra.css'
 markdown_extensions:
   - admonition
   - codehilite
