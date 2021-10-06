@@ -94,10 +94,10 @@ __Get SDK Wheel Link__
 
         If you have not build an SDK yet, refer to __Build SDK__ section of the documentation. You need to select x86_64 as the target platform.
 
-2. Click on the "COPY URL" icon left side of the platform to copy the downlooad link.
+2. Click on the "COPY URL" icon left side of __X86_64 (Python)__ to copy the downlooad link.
 
 <p align="center">
-<img src="../latest/img/console/AI Models/PreTrainedModels-SDKBuilt-copy.png">
+<img src="../latest/img/console/AI Models/PreTrainedModels-SDKBuilt-x86_64.png">
 </p>
 
 __Install SDK Wheel using SDK link__ 
