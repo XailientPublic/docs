@@ -98,7 +98,6 @@ __Get SDK Wheel Link__
 
 <p align="center">
 <img src="../latest/img/console/AI Models/PreTrainedModels-SDKBuilt-x86_64.png">
-</p>
 
 __Install SDK Wheel using SDK link__ 
 
