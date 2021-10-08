@@ -115,3 +115,15 @@ __Solution:__ Install the following dependencies:
 ``` bash
 sudo apt-get install libcurl4 php-curl
 ```
+
+### 9. Error while performing pip install for the SDK: process gets stuck at "Running setup.py bdist_wheel for opencv-python ... \"
+
+Some of the required libraries need updating on your device. 
+
+__Solution:__ Update and install the following dependencies:
+
+``` bash
+pip3 install –upgrade setuptools pip
+pip3 install opencv-python
+```
+Now try installing the SDK again.
