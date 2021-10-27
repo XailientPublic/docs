@@ -59,6 +59,12 @@ __Install python3__
 The Xailient SDK works with python 3.6 or later. Here we install python 3.7 though you could install any version
 of python >=3.6.
 
+!!! note
+
+    If you are using Jetson Nano and python3.6 there is an [issue with numpy](https://github.com/numpy/numpy/issues/18131)
+    that can be solved using `export OPENBLAS_CORETYPE=ARMV8`
+
+
 ```bash
 $ sudo apt-get install python3.7
 ```
