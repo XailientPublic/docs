@@ -124,6 +124,5 @@ __Solution:__ Update and install the following dependencies:
 
 ``` bash
 pip3 install –upgrade setuptools pip
-pip3 install opencv-python
 ```
 Now try installing the SDK again.
