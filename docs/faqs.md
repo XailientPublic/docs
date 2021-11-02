@@ -115,3 +115,15 @@ __Solution:__ Install the following dependencies:
 ``` bash
 sudo apt-get install libcurl4 php-curl
 ```
+
+
+### 9. I'm getting "ImportError: libGL.so.1: cannot open shared object file: No such file or directory"
+
+Some of the required libraries maybe missing on your device. 
+
+__Solution:__ Install the following dependencies:
+
+``` bash
+apt-get update
+apt install -y libgl1-mesa-glx
+```

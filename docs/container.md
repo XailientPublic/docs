@@ -18,8 +18,24 @@ Next, you must ensure you have a trained model to use. You can either:
 
 Use a pretrained model available in the Xailient console, OR
 Train a custom model. To achieve this follow the steps at Training a model.
-Next you will need to Build a Xailient SDK and choose the x86-64 option.
 
+Next you will need to Build a Xailient SDK for your target device.
+
+The table below recommends which target to choose for a few of the devices and operating systems:
+
+Device | Operating System | Xailient SDK | Installation Type |
+:-------------------------:|:-------------------------: | :-------------------------: | :-------------------------:
+| MacBook with Intel Core i5 | Mac BigSur  | X86_64  | Docker only |
+| MacBook with Apple M1 Chip | Mac BigSur | ARM64 | Docker only |
+| Intel Core i7 | Ubuntu 18.04 | X86_64 | Native and/or Docker |
+| Intel Core i7 | Ubuntu 19.04 | X86_64 | Native and/or Docker |
+| Raspberry Pi 3B+ | Raspbian Buster OS 32 bit | ARM32 | Native and/or Docker |
+| Raspberry Pi 4B | Raspbian Buster OS 32 bit | ARM32 | Native and/or Docker |
+| Raspberry Pi 4B | Raspbian Buster OS 64 bit | ARM64 | Native and/or Docker |
+
+!!! note
+
+    To install Xailient SDK natively, please refer to [Native Installation section](https://xailient-docs.readthedocs.io/en/latest/installation.html)
 
 The remaing of this document will take you through the process step by step.
 
@@ -27,86 +43,46 @@ The remaing of this document will take you through the process step by step.
 1. Download Docker Desktop using this [link](https://www.docker.com/products/docker-desktop).
 2. [Install Docker Desktop](https://docs.docker.com/get-docker/).
 
-### Create docker files
-
-You will need 2 files.
-1. Dockerfile
-2. docker-compose.yml
-
-Let's create them.
-
-1. Create a new folder and name it __XailientDocker__. This will be your working directory.
-
-2. Create a file and name it __Dockerfile__. Add the following content to it and save it to your working directory.
-
-filename: Dockerfile
-```
-FROM python:3.7
-
-# This builds a docker container that can be used to run the integration tests for an SDK
-
-RUN apt-get update && \
-    apt-get install -y ffmpeg && \
-    apt-get clean
-
-RUN python3.7 -m pip install opencv-python
-
-# set the working directory
-WORKDIR "/app"
-```
-
-3. Create a file and name it __docker-compose.yml__. Add the following content to it and save it to your working directory.
-
-
-filename: docker-compose.yml
-```
-version: '3'
-services:
-  app:
-    build: .
-    volumes:
-      - .:/app
-
-volumes:
-  .:
-```
-
 ### Start docker
 Ensure that the Docker Desktop app is running.
 
+### Prepare the SDK
+
+1. Make sure the SDK from the Xailient console is downloaded
+
+2. Create any folder in the local machine (e.g Documents/Input), and put the downloaded SDK is this folder 
+
 ### Run the docker container
-To run the docker container, open terminal, go to your working directory and run enter the following command:
+1. Open the Terminal, and go to the folder that have the sdk file (e.g cd Documents/Input)
+2. Enter the command ls (To see the list of files in the folder).
+3. Enter the following command (ensure the docker is opened):
 
 ```bash
-cd XailientDocker
-docker-compose run --rm app bash
+docker run --rm -it -v $(pwd):/input python:3.7 bash
 ```
+
+Ensure the next line should show the "root@&lt;numbers&gt;" this means that you are already in the container.
+  
+!!! note
+
+    Note that the command above also will create the same folder "input" inside the container and also get the sdk file the same as the local machine. (Basically it's copying from the local machine to the container)
+
+Then enter the command ls, to make sure the sdk file is in the input folder.
 
 ### Install XailientSDK
 
 Once in the container, you can install the Xailient SDK and run it inside the container.
 
-__Get SDK Wheel Link__
-
-1. Go to the Console and navigate to __MANAGE AI MODELS__. For the model you want to deploy, select the SDK you have build for your target platform. 
-
-    !!! note
-
-        If you have not build an SDK yet, refer to __Build SDK__ section of the documentation. You need to select x86_64 as the target platform.
-
-2. Click on the "COPY URL" icon left side of __X86_64 (Python)__ to copy the downlooad link.
-
-<p align="center">
-<img src="../latest/img/console/AI Models/PreTrainedModels-SDKBuilt-x86_64.png">
-
-__Install SDK Wheel using SDK link__ 
+1. Run the following command to install the SDK 
 
 ```bash
-python3 -m pip install "<SDK WHEEL LINKs>"
+python3.7 -m pip install <SDK file name>.whl 
+#(e.g python3.7 -m pip install xailient-2.1.1-py3-none-linux_aarch64.whl )
 ```
 
 !!! note
-    Replace &lt;SDK WHEEL LINK&gt; with the SDK link you copied earlier from the console.
+
+    Replace the SDK file name with your file name, or use * if you would like to run all files in the folder.
 
 __Start the Xailient Daemon which activates your license__
 
@@ -114,10 +90,18 @@ __Start the Xailient Daemon which activates your license__
 python3 -m xailient.install
 ```
 
+Once the installation is success, then run this command python3.7 -m xailient.install, and the following message will be displayed:
+
+```bash
+Registering device!  Thank you for being our customer...
+```
+
 That's it! You can now start using the Xailient SDK. If this is your first time using the Xailient
 SDK then it may be helpful to read the remainder of this document.
 
 __Info about the installed Xailient SDK__
+
+Run the following command to show the Installed Xailient SDK information:
 
 ```bash
 python3 -m pip show xailient
@@ -125,11 +109,7 @@ python3 -m pip show xailient
 
 ### Run sample code
 
-In the xailient folder of the install location, go to __samples__ folder. This folder contains a sample python script named "basic_sample.py" that demonstrates how to use the xailient sdk. 
-
-The script reads an image named "beatles.jpg" from __data__ folder, runs the detection sdk on this image and saves output to "beatles_output.jpg" in the current working directory.
-
-Now run the sample script.
+Use the following command to run the sample script that comes along with Xailient SDK.
 
 ```bash
 python3 -m xailient.samples.basic_sample
