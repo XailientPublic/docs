@@ -3,7 +3,6 @@
 !!! note
       If your local machines doesn't meet the requirements for native installation we also offer Docker [Containers as a deployment option](https://xailient-docs.readthedocs.io/en/latest/container.html).
 
-
 ## Device Setup
 
 To meet the minimum requirements, your device must be a x86_64, ARM32 or ARM64 architecture device. We've tested the following operating systems:
@@ -12,6 +11,17 @@ To meet the minimum requirements, your device must be a x86_64, ARM32 or ARM64 a
 * Ubuntu 19.04
 * Raspbian Buster 32-bit
 * Raspbian Buster 64-bit
+
+For ARM32, we have tested on the following device:
+
+ * RaspberryPi 3B+
+ * RaspberryPi 4B
+ * RaspberryPi Zero (this using ARM32v6)
+
+ For ARM64, we have tested:
+
+ * RaspberryPi 4B
+ * Jetson Nano
 
 The table below recommends which target to choose for a few of the devices and operating systems:
 
