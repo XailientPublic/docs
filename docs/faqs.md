@@ -115,3 +115,25 @@ __Solution:__ Install the following dependencies:
 ``` bash
 sudo apt-get install libcurl4 php-curl
 ```
+
+
+### 9. I'm getting "ImportError: libGL.so.1: cannot open shared object file: No such file or directory"
+
+Some of the required libraries maybe missing on your device. 
+
+__Solution:__ Install the following dependencies:
+
+``` bash
+apt-get update
+apt install -y libgl1-mesa-glx
+```
+
+### 10. I'm getting the error "Illegal instruction (core dumped)" when using python3.6 on Jetson Nano
+
+ There is a known [issue with numpy](https://github.com/numpy/numpy/issues/18131).
+
+ __Solution:__ Export the OPENBLAS_CORETYPE=ARMV8 env variable before running any python code
+
+ ``` bash
+ export OPENBLAS_CORETYPE=ARMV8
+ ```
