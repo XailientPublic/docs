@@ -34,9 +34,9 @@ Device | Operating System | Xailient SDK | Installation Type |
 | Raspberry Pi 3B+ | Raspbian Buster OS 32 bit | ARM32 | Native and/or Docker |
 | Raspberry Pi 4B | Raspbian Buster OS 32 bit | ARM32 | Native and/or Docker |
 | Raspberry Pi 4B | Raspbian Buster OS 64 bit | ARM64 | Native and/or Docker |
+| Jetson Nano | NVIDIA L4T 32.6.1 | ARM64 | Native and/or Docker |
 
 !!! note
-
     To install Xailient SDK inside a docker container, please refer to [Docker Installation section](https://xailient-docs.readthedocs.io/en/latest/container.html)
 
 ## SDK Installation
@@ -46,3 +46,4 @@ Xailient SDKs are available in Python and C++.
 ### [Installation of Python SDK](https://xailient-docs.readthedocs.io/en/latest/installation_python.html)
 
 ### [Installation of C++ SDK](https://xailient-docs.readthedocs.io/en/latest/installation_c_plus_plus.html)
+

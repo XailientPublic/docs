@@ -60,14 +60,18 @@ You can use options().set_option() method to set the following settings:
 | ------------- |:-------------:| :------------:| -------------|
 | Set bounding box threshold         | dnn_threshold           | float             |   Value between 0 and 1 for confidence score |
 | Enable samping the images         | sampling_frequency           | int             |   Enable this to cause the SDK to send every n<sup>th</sup> detection to the cloud where the sampled images can be used for retraining newer and more accurate models. |
+| Set post processing bbox area filtering threshold         | min_bbox_area_filter_threshold           | float             |   Post processing filtering threshold to discard all the bounding boxes that are below the threshold, where the threshold is compared against:  bbox.area() / input_image.area(). Default: An optimal value built into the SDK when the SDK was built based on the results of the training. Range: 0.0 to 1.0. |
+| Set post processing aspect ratio filtering thresholds         | min_bbox_aspect_ratio_filter_threshold and max_bbox_aspect_ratio_filter_threshold           | float             |   Post processing filtering threshold to filter out all bounding boxes that its aspect ratio are not in the range (min_bbox_aspect_ratio_filter_threshold max_bbox_aspect_ratio_filter_threshold). The aspect ratio is calculated bbox.width() / bbox.height(). Default: An optimal value built into the SDK when the SDK was built based on the results of the training the model. Range: 0.0 to inf. |
 
+
+ 
 
 #### Arguments
 
 | Arguments     | Input Type    |
 | ------------- |:-------------:|
 | OPTION         | string           |
-| VALUE         | int/string        |
+| VALUE         | int/string/float     |
 
 #### Example
 
