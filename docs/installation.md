@@ -26,6 +26,13 @@ To meet the minimum requirements, your device must be a x86_64 or ARM32 architec
 For ARM32, we have tested on the following device:
 
 * RaspberryPi 3B+
+* RaspberryPi 4B
+* RaspberryPi Zero (this using ARM32v6)
+
+For ARM64, we have tested:
+
+* RaspberryPi 4B
+* Jetson Nano
 
 
 ## SDK Installation
@@ -35,3 +42,4 @@ Xailient SDKs are available in Python and C++.
 ### [Installation of Python SDK](https://xailient-docs.readthedocs.io/en/latest/installation_python.html)
 
 ### [Installation of C++ SDK](https://xailient-docs.readthedocs.io/en/latest/installation_c_plus_plus.html)
+
