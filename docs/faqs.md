@@ -116,8 +116,18 @@ __Solution:__ Install the following dependencies:
 sudo apt-get install libcurl4 php-curl
 ```
 
+### 9. Error while performing pip install for the SDK: process gets stuck at "Running setup.py bdist_wheel for opencv-python ... \"
 
-### 9. I'm getting "ImportError: libGL.so.1: cannot open shared object file: No such file or directory"
+Some of the required libraries need updating on your device. 
+
+__Solution:__ Update and install the following dependencies:
+
+``` bash
+pip3 install –upgrade setuptools pip
+```
+Now try installing the SDK again.
+
+### 10. I'm getting "ImportError: libGL.so.1: cannot open shared object file: No such file or directory"
 
 Some of the required libraries maybe missing on your device. 
 
@@ -128,7 +138,7 @@ apt-get update
 apt install -y libgl1-mesa-glx
 ```
 
-### 10. I'm getting the error "Illegal instruction (core dumped)" when using python3.6 on Jetson Nano
+### 11. I'm getting the error "Illegal instruction (core dumped)" when using python3.6 on Jetson Nano
 
  There is a known [issue with numpy](https://github.com/numpy/numpy/issues/18131).
 
