@@ -17,7 +17,7 @@ By default, you will see the models in __"CARD VIEW"__.
 </p>
 
 
-1. Locate the model you want to build the SDK for. Click on <img src="../img/console/AI Models/CardSizeChangeButton.png" height=30 width=60> and select "Large" to expand the card to "Large" size.
+1. Locate the model you want to build the SDK for. Click on <img src="../latest/img/console/AI Models/CardSizeChangeButton.png" height=30 width=60> and select "Large" to expand the card to "Large" size.
 
     <p align="center">
       <img src="../latest/img/console/AI Models/ChangeCardSizeOptions.png">

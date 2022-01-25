@@ -29,7 +29,7 @@ You can switch to __"LIST VIEW"__ by clicking on the top-right button.
 
 ## Build SDK
 
-You can build SDKs using a pre-trained model for different platforms including _x86_64, and ARM32. 
+You can build SDKs using a pre-trained model for different platforms including _x86_64, ARM32 and ARM64. 
 
 For more details on how to build an SDK, refer to [Build Deployable SDK](/en/latest/buildSdk.html) section of the documentation
 
